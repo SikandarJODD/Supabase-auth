@@ -43,26 +43,45 @@
 	};
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<form on:submit|preventDefault={updateForm}>
-	<label for="email"
-		>Email :
-		<input type="email" name="email" id="email" bind:value={email} />
-	</label>
-	<label for="password"
-		>password :
+<div class="prose">
+	<div class="prose-pink prose-h1:flex">
+		<h1>Sveltekit Supabase Auth</h1>
+		<form
+			on:submit|preventDefault={updateForm}
+			class="border-2 border-slate-800 p-6 w-fit rounded-2xl bg-sky-100 shadow-md mb-3"
+		>
+			<label for="email" class="font-bold block my-1"
+				>Email :
+				<input
+					type="email"
+					name="email"
+					id="email"
+					bind:value={email}
+					placeholder="Email"
+					class="input input-bordered input-sm max-w-xs input-success"
+				/>
+			</label>
+			<label for="password" class="font-bold my-1 block"
+				>Password :
 
-		<input type="text" name="password" id="password" bind:value={password} />
-	</label>
-	<button type="submit">submit</button>
-</form>
-<a href="/signIn">SignIn</a>
-<button on:click={SignOut}>Sign Out</button>
-{#each products.data as item}
-	<ul>
-		<li>
-			<p>{item.name} : {item.type}</p>
-		</li>
-	</ul>
-{/each}
+				<input
+					type="text"
+					name="password"
+					id="password"
+					bind:value={password}
+					placeholder="Password"
+					class="input input-bordered input-sm max-w-xs"
+				/>
+			</label>
+			<button type="submit" class="btn btn-sm capitalize btn-outline">submit</button>
+		</form>
+		<div class="flex">
+			<div class="not-prose">
+				<a href="/signIn" class="btn btn-sm capitalize m-3 btn-outline">SignIn</a>
+			</div>
+			<div class="not-prose">
+				<button on:click={SignOut} class="btn btn-sm btn-primary capitalize m-3">Sign Out</button>
+			</div>
+		</div>
+	</div>
+</div>

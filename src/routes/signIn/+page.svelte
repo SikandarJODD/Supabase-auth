@@ -29,16 +29,35 @@
 	};
 </script>
 
-<h1>Sign In Form</h1>
-<form on:submit|preventDefault={signInBro}>
-	<label for="email"
-		>Email :
-		<input type="email" name="email" id="email" bind:value={email} />
-	</label>
-	<label for="password"
-		>password :
+<main class="prose">
+	<h1>Sign In Form</h1>
+	<form
+		on:submit|preventDefault={signInBro}
+		class="border-2 border-slate-800 w-fit p-6 rounded-2xl bg-sky-100 shadow-md mb-3"
+	>
+		<label for="email" class="font-bold block my-1"
+			>Email :
+			<input
+				type="email"
+				name="email"
+				id="email"
+				bind:value={email}
+				placeholder="Type here"
+				class="input input-bordered input-success max-w-xs"
+			/>
+		</label>
+		<label for="password" class="font-bold block my-1"
+			>Password :
 
-		<input type="text" name="password" id="password" bind:value={password} />
-	</label>
-	<button type="submit">submit</button>
-</form>
+			<input
+				type="text"
+				name="password"
+				id="password"
+				bind:value={password}
+				placeholder="Type here"
+				class="input input-bordered input-success max-w-xs"
+			/>
+		</label>
+		<button type="submit" class="btn btn-outline btn-sm capitalize my-3">submit</button>
+	</form>
+</main>
