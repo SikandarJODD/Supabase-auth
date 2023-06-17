@@ -8,13 +8,7 @@
 	$: products = data.prodcts;
 	let email = '';
 	let password = '';
-	// @ts-ignore
-	let currentData = async () => {
-		// @ts-ignore
-		const { data } = await supabase.auth.user;
 
-		console.log(data);
-	};
 	let updateForm = async () => {
 		// @ts-ignore
 		const { data, error } = await supabase.auth.signUp({
